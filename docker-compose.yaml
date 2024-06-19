@@ -1,0 +1,23 @@
+
+services:
+  kuzco:
+    # image: kuzcoxyz/worker:latest
+    build: ./
+    group_add:
+      - video
+      - 110
+    devices: 
+      - /dev/kfd
+      - /dev/dri
+    security_opt:
+      - seccomp:unconfined
+    command:
+      - /usr/local/bin/kuzco
+      - worker
+      - start
+      - --worker
+      - ${WORKER_ID} 
+      - --code
+      - ${WORKER_CODE}
+    volumes:
+      - ./kuzco-mount:/root/.kuzco
