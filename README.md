@@ -23,6 +23,8 @@ docker compose build
 
 # Running
 ```sh
+export WORKER_ID="YOUR_ID"
+export WORKER_CODE="YOUR_CODE"
 docker compose up -d
 docker compose log -f
 ```
