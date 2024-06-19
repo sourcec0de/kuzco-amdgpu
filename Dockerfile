@@ -17,16 +17,16 @@ RUN apt install -y \
     libelf1 \
     kmod \
     file \
+    curl \
     python3-dev \
     python3-pip
 
+# download amd installer packages
 RUN wget https://repo.radeon.com/amdgpu-install/6.1.3/ubuntu/jammy/amdgpu-install_6.1.60103-1_all.deb
 RUN apt install -y ./amdgpu-install_6.1.60103-1_all.deb
 
+# install kernal drivers and rocm
 RUN amdgpu-install -y --usecase=dkms,rocm
-
-# Register the ROCM package repository, and install rocm-dev package
-RUN apt install -y curl
 
 # Set up environment variables for ROCm
 ENV PATH="/opt/rocm/bin:${PATH}"
@@ -34,6 +34,7 @@ ENV LD_LIBRARY_PATH="/opt/rocm/lib:${LD_LIBRARY_PATH}"
 ENV ROCM_PATH="/opt/rocm"
 
 # Determine the architecture
+# TODO: read this from docker
 ARG ARCH="amd64"
 ARG BUCKET_URL="https://sg.kuzco.xyz"
 ARG CLI_VERSION="0.0.6-1f8a5f6"
