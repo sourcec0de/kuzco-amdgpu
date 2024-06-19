@@ -1,8 +1,8 @@
 
 services:
   kuzco:
-    # image: kuzcoxyz/worker:latest
     build: ./
+    restart: always
     group_add:
       - video
       - 110
@@ -21,3 +21,7 @@ services:
       - ${WORKER_CODE}
     volumes:
       - ./kuzco-mount:/root/.kuzco
+    deploy:
+      replicas: 1
+      mode: replicated
+      endpoint_mode: vip

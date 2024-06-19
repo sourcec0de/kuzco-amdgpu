@@ -1,2 +1,4 @@
 kuzco-mount/
 install.sh
+.env
+*.env
