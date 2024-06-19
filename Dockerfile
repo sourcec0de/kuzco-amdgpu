@@ -36,7 +36,7 @@ ENV ROCM_PATH="/opt/rocm"
 # Determine the architecture
 ARG ARCH="amd64"
 ARG BUCKET_URL="https://sg.kuzco.xyz"
-ARG CLI_VERSION="0.0.6-1f8a5f6"
+ARG CLI_VERSION="0.0.6-32e10a8"
 
 # Download and install the Kuzco CLI
 RUN curl --fail --show-error --location --progress-bar -o ./kuzco "${BUCKET_URL}/cli/release/${ARCH}/kuzco-linux-${ARCH}-${CLI_VERSION}"
