@@ -2,6 +2,9 @@
 > This repo is a work-in-progress and for demonstrational purposes.
 > A simple repo showcasing how to run kuzco.xyz in a docker container mounting amdgpu's rocm
 
+# Warning
+> Kuzco [recently announced][ban-announ] that a restart policy may result in getting your worker banned.
+
 
 # Overview
 As of 2024/06/19 the default kuzco container doesn't seem suited for AMD gpu's.
@@ -32,3 +35,5 @@ docker compose log -f
 # Scaling
 ## TODO
 - [ ] Add `replicas` key to the docker-compose.yaml file
+
+[ban-announ]: https://discord.com/channels/1100110477599723550/1215659199846154261/1253105879386034228
