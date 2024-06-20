@@ -37,7 +37,7 @@ ENV ROCM_PATH="/opt/rocm"
 # TODO: read this from docker
 ARG ARCH="amd64"
 ARG BUCKET_URL="https://sg.kuzco.xyz"
-ARG CLI_VERSION="0.0.6-32e10a8"
+ARG CLI_VERSION="0.0.6-33bd961"
 
 # Download and install the Kuzco CLI
 RUN curl --fail --show-error --location --progress-bar -o ./kuzco "${BUCKET_URL}/cli/release/${ARCH}/kuzco-linux-${ARCH}-${CLI_VERSION}"
