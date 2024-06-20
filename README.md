@@ -8,7 +8,7 @@
 
 # Overview
 As of 2024/06/19 the default kuzco container doesn't seem suited for AMD gpu's.
-I would recommend watching the official discord for official support in the future.
+I would recommend watching their discord server for official support in the future.
 
 # Setup (Ubuntu 22.04 host)
 ### TODO
